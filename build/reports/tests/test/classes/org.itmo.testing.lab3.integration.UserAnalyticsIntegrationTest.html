@@ -29,19 +29,19 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">4</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">4</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.414s</div>
+<div class="counter">1.391s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">78%</div>
+<div class="infoBox skipped" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,157 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="testGetInactiveUsersWrongParams()"></a>
-<h3 class="failures">Тест получения списка неактивных пользователей за отрицательный период</h3>
-<span class="code">
-<pre>java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;400&gt; but was &lt;200&gt;.
-
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
-	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at org.itmo.testing.lab3.integration.UserAnalyticsIntegrationTest.testGetInactiveUsersWrongParams(UserAnalyticsIntegrationTest.java:291)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="testGetMonthlyActivity()"></a>
-<h3 class="failures">Тест получения метрики активности за месяц</h3>
-<span class="code">
-<pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn't match expectation.
-Expected: a string containing &quot;\&quot;2025-03-06\&quot;:1800&quot;
-  Actual: {&quot;2025-03-18&quot;:1800}
-
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at org.itmo.testing.lab3.integration.UserAnalyticsIntegrationTest.testGetMonthlyActivity(UserAnalyticsIntegrationTest.java:208)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="testRecordSessionWrong()"></a>
-<h3 class="failures">Тест записи некорректной сессии</h3>
-<span class="code">
-<pre>java.lang.AssertionError: 1 expectation failed.
-Response body doesn't match expectation.
-Expected: &quot;Wrong session, loginTime must be earlier then loginTime&quot;
-  Actual: Missing parameters
-
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
-	at org.itmo.testing.lab3.integration.UserAnalyticsIntegrationTest.testRecordSessionWrong(UserAnalyticsIntegrationTest.java:279)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="testUserRegistrationDublicated()"></a>
-<h3 class="failures">Тест повторной регистрации пользователя</h3>
-<span class="code">
-<pre>java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;400&gt; but was &lt;500&gt;.
-
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
-	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at org.itmo.testing.lab3.integration.UserAnalyticsIntegrationTest.testUserRegistrationDublicated(UserAnalyticsIntegrationTest.java:248)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -225,32 +81,32 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 <tr>
 <td class="success">Тест получения списка неактивных пользователей</td>
 <td class="success">testGetInactiveUsers()</td>
-<td class="success">0.303s</td>
+<td class="success">0.305s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Тест получения списка неактивных пользователей с некорректным days</td>
 <td class="success">testGetInactiveUsersInvalidDays()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Тест получения списка неактивных пользователей без параметра days</td>
 <td class="success">testGetInactiveUsersMissingDays()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Тест получения списка неактивных пользователей за отрицательный период</td>
-<td class="failures">testGetInactiveUsersWrongParams()</td>
-<td class="failures">0.010s</td>
-<td class="failures">failed</td>
+<td class="skipped">Тест получения списка неактивных пользователей за отрицательный период</td>
+<td class="skipped">testGetInactiveUsersWrongParams()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="failures">Тест получения метрики активности за месяц</td>
-<td class="failures">testGetMonthlyActivity()</td>
-<td class="failures">0.015s</td>
-<td class="failures">failed</td>
+<td class="skipped">Тест получения метрики активности за месяц</td>
+<td class="skipped">testGetMonthlyActivity()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
 <td class="success">Тест получения метрики активности за месяц с некорректным month</td>
@@ -261,7 +117,7 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 <tr>
 <td class="success">Тест получения метрики активности за месяц без параметра userId</td>
 <td class="success">testGetMonthlyActivityMissingUserId()</td>
-<td class="success">0.007s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -273,50 +129,50 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 <tr>
 <td class="success">Тест получения общего времени активности без userId</td>
 <td class="success">testGetTotalActivityMissingUserId()</td>
-<td class="success">0.005s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Тест записи сессии</td>
 <td class="success">testRecordSession()</td>
-<td class="success">0.008s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Тест записи сессии с некорректным loginTime</td>
 <td class="success">testRecordSessionInvalidLoginTime()</td>
-<td class="success">0.007s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Тест записи сессии с некорректным logoutTime</td>
 <td class="success">testRecordSessionInvalidLogoutTime()</td>
-<td class="success">0.006s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Тест записи сессии без userId</td>
 <td class="success">testRecordSessionMissingUserId()</td>
-<td class="success">0.008s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Тест записи некорректной сессии</td>
-<td class="failures">testRecordSessionWrong()</td>
-<td class="failures">0.024s</td>
-<td class="failures">failed</td>
+<td class="skipped">Тест записи некорректной сессии</td>
+<td class="skipped">testRecordSessionWrong()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
 <td class="success">Тест регистрации пользователя</td>
 <td class="success">testUserRegistration()</td>
-<td class="success">0.957s</td>
+<td class="success">0.983s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Тест повторной регистрации пользователя</td>
-<td class="failures">testUserRegistrationDublicated()</td>
-<td class="failures">0.012s</td>
-<td class="failures">failed</td>
+<td class="skipped">Тест повторной регистрации пользователя</td>
+<td class="skipped">testUserRegistrationDublicated()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
 <td class="success">Тест регистрации пользователя Leha</td>
@@ -333,20 +189,20 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 <tr>
 <td class="success">Тест регистрации пользователя без userName</td>
 <td class="success">testUserRegistrationMissingUserName()</td>
-<td class="success">0.006s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO io.javalin.Javalin - Starting Javalin ...
 [Test worker] INFO org.eclipse.jetty.server.Server - jetty-11.0.24; built: 2024-08-26T18:11:22.448Z; git: 5dfc59a691b748796f922208956bd1f2794bcd16; jvm 21.0.6
 [Test worker] INFO org.eclipse.jetty.server.session.DefaultSessionIdManager - Session workerName=node0
-[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@6c7d5f84{/,null,AVAILABLE}
-[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@5de80d43{HTTP/1.1, (http/1.1)}{0.0.0.0:9000}
-[Test worker] INFO org.eclipse.jetty.server.Server - Started Server@1f837ac0{STARTING}[11.0.24,sto=0] @3474ms
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5713e35f{/,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@19ce597a{HTTP/1.1, (http/1.1)}{0.0.0.0:9000}
+[Test worker] INFO org.eclipse.jetty.server.Server - Started Server@665e18d5{STARTING}[11.0.24,sto=0] @2813ms
 [Test worker] INFO io.javalin.Javalin - 
        __                  ___           _____
       / /___ __   ______ _/ (_)___      / ___/
@@ -356,58 +212,13 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 
        https://javalin.io/documentation
 
-[Test worker] INFO io.javalin.Javalin - Javalin started in 326ms \o/
+[Test worker] INFO io.javalin.Javalin - Javalin started in 273ms \o/
 [Test worker] INFO io.javalin.Javalin - Listening on http://localhost:9000/
 [Test worker] INFO io.javalin.Javalin - You are running Javalin 6.4.0 (released December 17, 2024).
-[JettyServerThreadPool-56] WARN io.javalin.Javalin - Uncaught exception
-java.lang.IllegalArgumentException: User already exists
-	at org.itmo.testing.lab3.service.UserAnalyticsService.registerUser(UserAnalyticsService.java:18)
-	at org.itmo.testing.lab3.controller.UserAnalyticsController.lambda$createApp$0(UserAnalyticsController.java:24)
-	at io.javalin.router.Endpoint.handle(Endpoint.kt:52)
-	at io.javalin.router.ParsedEndpoint.handle(ParsedEndpoint.kt:15)
-	at io.javalin.http.servlet.DefaultTasks.HTTP$lambda$9$lambda$7$lambda$6(DefaultTasks.kt:52)
-	at io.javalin.http.servlet.JavalinServlet.handleTask(JavalinServlet.kt:99)
-	at io.javalin.http.servlet.JavalinServlet.handleSync(JavalinServlet.kt:64)
-	at io.javalin.http.servlet.JavalinServlet.handle(JavalinServlet.kt:50)
-	at io.javalin.http.servlet.JavalinServlet.service(JavalinServlet.kt:30)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
-	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:52)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:529)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1381)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1553)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1303)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
-	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:173)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
-	at org.eclipse.jetty.server.Server.handle(Server.java:563)
-	at org.eclipse.jetty.server.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1598)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:753)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:501)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:287)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
-	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:421)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:390)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:277)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:199)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
 [Test worker] INFO io.javalin.Javalin - Stopping Javalin ...
-[Test worker] INFO org.eclipse.jetty.server.Server - Stopped Server@1f837ac0{STOPPING}[11.0.24,sto=0]
-[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Stopped ServerConnector@5de80d43{HTTP/1.1, (http/1.1)}{0.0.0.0:9000}
-[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@6c7d5f84{/,null,STOPPED}
+[Test worker] INFO org.eclipse.jetty.server.Server - Stopped Server@665e18d5{STOPPING}[11.0.24,sto=0]
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Stopped ServerConnector@19ce597a{HTTP/1.1, (http/1.1)}{0.0.0.0:9000}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5713e35f{/,null,STOPPED}
 [Test worker] INFO io.javalin.Javalin - Javalin has stopped
 </pre>
 </span>
@@ -420,7 +231,7 @@ java.lang.IllegalArgumentException: User already exists
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10</a> at 23 мар. 2025 г., 01:00:00</p>
+<a href="http://www.gradle.org">Gradle 8.10</a> at 23 мар. 2025 г., 11:23:06</p>
 </div>
 </div>
 </body>

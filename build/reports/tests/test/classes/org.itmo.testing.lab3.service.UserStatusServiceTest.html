@@ -29,19 +29,19 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">3</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">3</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.085s</div>
+<div class="counter">0.996s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">72%</div>
+<div class="infoBox skipped" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,58 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="shouldHandleNullSessionList()"></a>
-<h3 class="failures">Возвращение пустого результата, если getUserSessions возвращает null</h3>
-<span class="code">
-<pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.isEmpty()&quot; because &quot;sessions&quot; is null
-	at org.itmo.testing.lab3.service.UserStatusService.getUserLastSessionDate(UserStatusService.java:30)
-	at org.itmo.testing.lab3.service.UserStatusServiceTest.shouldHandleNullSessionList(UserStatusServiceTest.java:102)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="shouldHandleSessionsWithNullLogoutTime()"></a>
-<h3 class="failures">Возвращение пустого результата, если сессии есть, но logoutTime == null</h3>
-<span class="code">
-<pre>java.lang.NullPointerException: Cannot invoke &quot;java.time.LocalDateTime.toLocalDate()&quot; because the return value of &quot;org.itmo.testing.lab3.service.UserAnalyticsService$Session.getLogoutTime()&quot; is null
-	at org.itmo.testing.lab3.service.UserStatusService.getUserLastSessionDate(UserStatusService.java:32)
-	at org.itmo.testing.lab3.service.UserStatusServiceTest.shouldHandleSessionsWithNullLogoutTime(UserStatusServiceTest.java:118)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="shouldReturnEmptyWhenNoSessionsExist()"></a>
-<h3 class="failures">Возвращение пустого результата при отсутствии сессий</h3>
-<span class="code">
-<pre>java.lang.NullPointerException: Cannot invoke &quot;org.itmo.testing.lab3.service.UserAnalyticsService$Session.getLogoutTime()&quot; because &quot;lastSession&quot; is null
-	at org.itmo.testing.lab3.service.UserStatusService.getUserLastSessionDate(UserStatusService.java:32)
-	at org.itmo.testing.lab3.service.UserStatusServiceTest.shouldReturnEmptyWhenNoSessionsExist(UserStatusServiceTest.java:89)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -126,7 +81,7 @@
 <tr>
 <td class="success">[1] alpha, 100, Active</td>
 <td class="success">shouldDetermineUserStatus(String, long, String)[1]</td>
-<td class="success">0.045s</td>
+<td class="success">0.957s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -150,32 +105,32 @@
 <tr>
 <td class="success">[5] epsilon, 60, Active</td>
 <td class="success">shouldDetermineUserStatus(String, long, String)[5]</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] beta, -2, Inactive</td>
 <td class="success">shouldDetermineUserStatus(String, long, String)[6]</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Возвращение пустого результата, если getUserSessions возвращает null</td>
-<td class="failures">shouldHandleNullSessionList()</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
+<td class="skipped">Возвращение пустого результата, если getUserSessions возвращает null</td>
+<td class="skipped">shouldHandleNullSessionList()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="failures">Возвращение пустого результата, если сессии есть, но logoutTime == null</td>
-<td class="failures">shouldHandleSessionsWithNullLogoutTime()</td>
-<td class="failures">1.026s</td>
-<td class="failures">failed</td>
+<td class="skipped">Возвращение пустого результата, если сессии есть, но logoutTime == null</td>
+<td class="skipped">shouldHandleSessionsWithNullLogoutTime()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="failures">Возвращение пустого результата при отсутствии сессий</td>
-<td class="failures">shouldReturnEmptyWhenNoSessionsExist()</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
+<td class="skipped">Возвращение пустого результата при отсутствии сессий</td>
+<td class="skipped">shouldReturnEmptyWhenNoSessionsExist()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
 <td class="success">Определение последней даты выхода при наличии нескольких сессий</td>
@@ -186,12 +141,12 @@
 <tr>
 <td class="success">Обработка случая с одной сессией</td>
 <td class="success">shouldWorkWithSingleSession()</td>
-<td class="success">0.002s</td>
+<td class="success">0.028s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
@@ -210,7 +165,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10</a> at 23 мар. 2025 г., 01:00:00</p>
+<a href="http://www.gradle.org">Gradle 8.10</a> at 23 мар. 2025 г., 11:23:06</p>
 </div>
 </div>
 </body>

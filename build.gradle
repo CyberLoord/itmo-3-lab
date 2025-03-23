@@ -45,3 +45,16 @@ allure {
     version = "2.21.0"
     autoconfigure = true
 }
+
+allure {
+    version.set("2.21.0")
+    report {
+        version.set("2.21.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 { enabled.set(true) }
+        }
+    }
+}

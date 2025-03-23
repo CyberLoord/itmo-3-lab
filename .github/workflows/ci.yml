@@ -70,11 +70,14 @@ jobs:
       - name: Generate Allure Report
         run: ./gradlew allureReport
 
+      - name: Debug - Check Allure report directory
+        run: ls -R build/reports/
+
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
         with:
           name: allure-report-${{ runner.os }}
-          path: build/allure-results/
+          path: build/reports/allure-report/
           retention-days: 7
   codeql:
     runs-on: ubuntu-latest

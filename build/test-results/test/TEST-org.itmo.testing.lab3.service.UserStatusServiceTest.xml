@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.itmo.testing.lab3.service.UserStatusServiceTest" tests="11" skipped="0" failures="3" errors="0" timestamp="2025-03-22T21:59:56" hostname="MacBook-Air-3.local" time="1.294">
+<testsuite name="org.itmo.testing.lab3.service.UserStatusServiceTest" tests="11" skipped="3" failures="0" errors="0" timestamp="2025-03-23T08:23:05" hostname="MacBook-Air-3.local" time="1.061">
   <properties/>
-  <testcase name="Возвращение пустого результата, если сессии есть, но logoutTime == null" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="1.026">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;java.time.LocalDateTime.toLocalDate()&quot; because the return value of &quot;org.itmo.testing.lab3.service.UserAnalyticsService$Session.getLogoutTime()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.time.LocalDateTime.toLocalDate()&quot; because the return value of &quot;org.itmo.testing.lab3.service.UserAnalyticsService$Session.getLogoutTime()&quot; is null
-	at org.itmo.testing.lab3.service.UserStatusService.getUserLastSessionDate(UserStatusService.java:32)
-	at org.itmo.testing.lab3.service.UserStatusServiceTest.shouldHandleSessionsWithNullLogoutTime(UserStatusServiceTest.java:118)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</failure>
+  <testcase name="Возвращение пустого результата, если сессии есть, но logoutTime == null" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.0">
+    <skipped/>
   </testcase>
-  <testcase name="Возвращение пустого результата при отсутствии сессий" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;org.itmo.testing.lab3.service.UserAnalyticsService$Session.getLogoutTime()&quot; because &quot;lastSession&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;org.itmo.testing.lab3.service.UserAnalyticsService$Session.getLogoutTime()&quot; because &quot;lastSession&quot; is null
-	at org.itmo.testing.lab3.service.UserStatusService.getUserLastSessionDate(UserStatusService.java:32)
-	at org.itmo.testing.lab3.service.UserStatusServiceTest.shouldReturnEmptyWhenNoSessionsExist(UserStatusServiceTest.java:89)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</failure>
+  <testcase name="Возвращение пустого результата при отсутствии сессий" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.0">
+    <skipped/>
   </testcase>
-  <testcase name="[1] alpha, 100, Active" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.045"/>
+  <testcase name="[1] alpha, 100, Active" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.957"/>
   <testcase name="[2] beta, 19, Inactive" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002"/>
   <testcase name="[3] gamma, 0, Inactive" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.001"/>
   <testcase name="[4] delta, 130, Highly active" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002"/>
-  <testcase name="[5] epsilon, 60, Active" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.001"/>
-  <testcase name="[6] beta, -2, Inactive" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.001"/>
-  <testcase name="Обработка случая с одной сессией" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002"/>
-  <testcase name="Возвращение пустого результата, если getUserSessions возвращает null" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.001">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;java.util.List.isEmpty()&quot; because &quot;sessions&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.isEmpty()&quot; because &quot;sessions&quot; is null
-	at org.itmo.testing.lab3.service.UserStatusService.getUserLastSessionDate(UserStatusService.java:30)
-	at org.itmo.testing.lab3.service.UserStatusServiceTest.shouldHandleNullSessionList(UserStatusServiceTest.java:102)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</failure>
+  <testcase name="[5] epsilon, 60, Active" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002"/>
+  <testcase name="[6] beta, -2, Inactive" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002"/>
+  <testcase name="Обработка случая с одной сессией" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.028"/>
+  <testcase name="Возвращение пустого результата, если getUserSessions возвращает null" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.0">
+    <skipped/>
   </testcase>
   <testcase name="Определение последней даты выхода при наличии нескольких сессий" classname="org.itmo.testing.lab3.service.UserStatusServiceTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
