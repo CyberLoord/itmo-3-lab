@@ -101,3 +101,11 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
+
+      - name: Deploy Allure report to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/reports/allure-report
+          branch: gh-pages
