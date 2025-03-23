@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: [20]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'temurin'
+
+      - name: Grant execute permission for gradlew (Linux only)
+        if: runner.os == 'Linux'
+        run: chmod +x gradlew
+
+      - name: Cache Gradle
+        uses: actions/cache@v3
+        with:
+          path: ${{ runner.os == 'Windows' && 'C:\\Users\\RunnerUser\\.gradle\\caches' || '~/.gradle/caches' }}
+          key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      - name: Clear Gradle cache
+        run: ./gradlew clean
+
+      - name: Build project with Gradle
+        run: ./gradlew clean build
+
+      - name: List tests
+        run: ./gradlew clean test --dry-run
+
+      - name: Run tests with Gradle
+        run: ./gradlew clean test --rerun-tasks
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-${{ runner.os }}
+          path: build/reports/tests/test/
+          retention-days: 7
+
+      - name: Generate JaCoCo coverage report
+        run: ./gradlew jacocoTestReport
+
+      - name: Upload JaCoCo report
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report-${{ runner.os }}
+          path: build/reports/jacoco/test/html/
+          retention-days: 7
+
+      - name: Generate Allure Report
+        run: ./gradlew allureReport
+
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ runner.os }}
+          path: build/reports/allure-report/
+          retention-days: 7
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build project before CodeQL analysis
+        run: ./gradlew build
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: java
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
