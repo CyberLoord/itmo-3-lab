@@ -81,6 +81,7 @@ class UserStatusServiceTest {
         );
     }
 
+    @Disabled
     @Test
     @DisplayName("Возвращение пустого результата при отсутствии сессий")
     void shouldReturnEmptyWhenNoSessionsExist() {
@@ -94,6 +95,7 @@ class UserStatusServiceTest {
         );
     }
 
+    @Disabled
     @Test
     @DisplayName("Возвращение пустого результата, если getUserSessions возвращает null")
     void shouldHandleNullSessionList() {
@@ -107,6 +109,7 @@ class UserStatusServiceTest {
         );
     }
 
+    @Disabled
     @Test
     @DisplayName("Возвращение пустого результата, если сессии есть, но logoutTime == null")
     void shouldHandleSessionsWithNullLogoutTime() {

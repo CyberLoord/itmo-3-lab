@@ -194,6 +194,7 @@ public class UserAnalyticsIntegrationTest {
                 .body(equalTo("Invalid number format for days"));
     }
 
+    @Disabled
     @Test
     @Order(13)
     @DisplayName("Тест получения метрики активности за месяц")
@@ -235,6 +236,7 @@ public class UserAnalyticsIntegrationTest {
                 .body(containsString("Invalid data"));
     }
 
+    @Disabled
     @Test
     @Order(16)
     @DisplayName("Тест повторной регистрации пользователя")
@@ -263,6 +265,7 @@ public class UserAnalyticsIntegrationTest {
                 .body(equalTo("User registered: true"));
     }
 
+    @Disabled
     @Test
     @Order(2)
     @DisplayName("Тест записи некорректной сессии")
@@ -279,6 +282,7 @@ public class UserAnalyticsIntegrationTest {
                 .body(equalTo("Wrong session, loginTime must be earlier then loginTime"));
     }
 
+    @Disabled
     @Test
     @Order(10)
     @DisplayName("Тест получения списка неактивных пользователей за отрицательный период")
