@@ -1,0 +1,1 @@
+{"uuid":"49f22240-202e-4758-bffa-0abac5769660","name":"Обработка случая с одной сессией","children":["ce582728-ea50-4024-99c7-fc1b466f6d06"],"befores":[{"name":"prepareMocks","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1742680797733,"stop":1742680797733}],"afters":[],"start":1742680797732,"stop":1742680797736}
