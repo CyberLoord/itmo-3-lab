@@ -95,7 +95,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build project before CodeQL analysis
-        run: ./gradlew build
+        run: ./gradlew clean build --debug
+
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
